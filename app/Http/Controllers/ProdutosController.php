@@ -121,7 +121,7 @@ class ProdutosController extends Controller
 
             if(ItemPedido::where('id_produto',$id)){
                 Produto::find($id)->delete();
-                redirect()->route('produtos.listaProdutos');
+                return redirect()->route('produtos.listaProdutos');
             }else{
                 throw new Exception();
             }
